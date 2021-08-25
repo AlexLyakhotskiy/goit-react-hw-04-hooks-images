@@ -53,7 +53,7 @@ function ImageGallery({ searchQuery }) {
       .fetchArticles()
       .then(({ hits }) => setImgArr(prev => [...prev, ...hits]))
       .catch(error => toast.error(`${error}`))
-      .finally(setPending(false));
+      .finally(() => setPending(false));
   }
 
   return (
