@@ -60,9 +60,10 @@ function ImageGallery({ searchQuery }) {
     <>
       <Container>
         <ul className={styles.ImageGallery}>
-          {imgArr.map(({ webformatURL }, index) => (
+          {imgArr.map(({ webformatURL, tags }, index) => (
             <ImageGalleryItem
               webformatURL={webformatURL}
+              alt={tags}
               key={index}
               id={index}
               onImgClick={onImgClick}
@@ -79,7 +80,7 @@ function ImageGallery({ searchQuery }) {
 
       {imgInModal && (
         <Modal closeModal={() => setImgInModal('')}>
-          <img src={imgInModal} alt="" />
+          <img src={imgInModal} alt="large pic in modal" />
         </Modal>
       )}
     </>
